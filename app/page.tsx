@@ -1,13 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
-import ProductCard from "./components/ProductCard";
 //COMMAND NP PARA VER FILES
-export default function Home() {
+
+export default function Homepage() {
   return (
     <main>
-      <h1>Hello world</h1>
-      <Link href="/superheros">Superheros</Link>
-      <ProductCard />
+      <h1>SUPERWIKI</h1>
     </main>
   );
 }
