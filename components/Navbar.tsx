@@ -32,7 +32,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            href="/superheros"
+            href="/ligas/superheros"
             style={{
               color: "white",
               textDecoration: "none",
