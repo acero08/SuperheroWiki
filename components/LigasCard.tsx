@@ -15,12 +15,11 @@ const LigasCard = () => {
   useEffect(() => {
     const fetchLigas = async () => {
       try {
-        const res = await fetch("http://localhost:3001/api/liga/superhero");
+        const res = await fetch("http://localhost:3001/ligas");
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data: Liga[] = await res.json();
-        console.log("Datos recibidos:", data);
         setLigas(data);
       } catch (error) {
         console.error("Error al obtener las ligas:", error);
@@ -44,7 +43,12 @@ const LigasCard = () => {
       }}
     >
       {ligas.map((liga) => (
-        <Link key={liga._id} href={`/ligas/${liga._id}`} passHref>
+        <Link
+          key={liga._id}
+          href={`/ligas/${liga._id}`} // Esta ruta está correcta
+          passHref
+          legacyBehavior
+        >
           <div
             style={{
               padding: "10px",
@@ -55,14 +59,6 @@ const LigasCard = () => {
               textAlign: "center",
               backgroundColor: "rgba(255, 255, 255, 0.1)",
               transition: "background-color 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor =
-                "rgba(255, 255, 255, 0.2)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor =
-                "rgba(255, 255, 255, 0.1)";
             }}
           >
             <h3>{liga.nombre}</h3>
