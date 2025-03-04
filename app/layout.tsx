@@ -20,13 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={bangers.className}>
-        <Navbar />
-        {children}
+      <body
+        style={{ margin: 0, padding: 0, height: "100vh", overflow: "hidden" }}
+      >
+        {children} {}
       </body>
     </html>
   );
 }
+
 //<html>
 // <body>
 //   <nav>

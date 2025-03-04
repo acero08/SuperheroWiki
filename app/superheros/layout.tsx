@@ -1,17 +1,16 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
-export const metadata = {
-  Title: "SuperWiki",
-};
-
-const SuperheroLayout = () => {
+const SuperheroLayout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   return (
-    <nav>
-      <h3>Seccion tienda </h3>
-      <ul>
-        <li>Categoria</li>
-      </ul>
-    </nav>
+    <>
+      <nav>
+        <h3>Sección tienda</h3>
+        <ul>
+          <li>Categoría</li>
+        </ul>
+      </nav>
+      <main>{children}</main>
+    </>
   );
 };
 
